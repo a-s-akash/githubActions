@@ -1,35 +1,38 @@
 name: Flutter CI
 
 on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
   push:
     branches:
-      - "**"
-  pull_request:
+      - main
+      - develop
 
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: flutter pub get
 
-      - name: Check formatting
+      - name: Check Formatting
         run: dart format --set-exit-if-changed .
 
-      - name: Analyze
+      - name: Analyze Code
         run: flutter analyze
 
-      - name: Run tests
+      - name: Run Tests
         run: flutter test
 
       - name: Build APK

@@ -1,0 +1,8 @@
+Feature:
+Dark mode support.
+
+Problem:
+Users cannot switch themes.
+
+Solution:
+Add light/dark mode toggle.

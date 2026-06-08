@@ -1,0 +1,15 @@
+Title: App crashes on login
+
+Description:
+The app crashes after tapping Login.
+
+Steps:
+1. Open app
+2. Enter credentials
+3. Tap Login
+
+Expected:
+Navigate to home screen.
+
+Actual:
+Application crashes.
